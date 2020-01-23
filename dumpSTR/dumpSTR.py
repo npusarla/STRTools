@@ -13,14 +13,17 @@ import os
 if __name__ == '__main__' and __package__ is None:
     from os import sys, path
     sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
-    sys.path.append(
+    utils_dir = os.path.join(os.getcwd(), "../strtools/utils") 
+    sys.path.append(os.path.normpath(utils_dir)  
 try:
     import dumpSTR.filters as filters # Before
+    import common 
+    import utils 
 except ImportError:
     import filters # After
 
-import strtools.utils.common as common
-import strtools.utils.utils as utils
+#import strtools.utils.common as common
+#import strtools.utils.utils as utils
 
 # Load external libraries
 import argparse
