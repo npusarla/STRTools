@@ -11,18 +11,7 @@ import os
 
 # Handle STRTools imports differently depending on where we're calling this from
 if __name__ == '__main__' and __package__ is None:
-<<<<<<< HEAD
-    from os import sys, path
     sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
-try:
-    import dumpSTR.filters as filters # Before
-except ImportError:
-    import filters # After
-
-import strtools.utils.common as common
-import strtools.utils.utils as utils
-=======
-    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
     sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "strtools", "utils"))
     import filters # If running from source code
     import common
@@ -41,7 +30,6 @@ else:
 #    import common
 #    import utils
 
->>>>>>> 7b45f899a332df3a2251fe78c37f581c83c038fc
 
 # Load external libraries
 import argparse
